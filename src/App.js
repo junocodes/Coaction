@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import firebaseDB from "./data/firebase";
 import Main from "./components/wrapper/Main";
 import Sidebar from "./components/wrapper/Sidebar";
 
@@ -7,7 +8,7 @@ export default class App extends Component {
     return (
       <div className="layout">
         <Main />
-        <Sidebar />
+        <Sidebar firebaseDB={firebaseDB} />
       </div>
     );
   }
