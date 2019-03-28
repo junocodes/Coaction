@@ -1,10 +1,10 @@
 import React from "react";
-import Teams from "../presentational/Teams";
+import TeamsList from "../presentational/TeamsList";
 
 export default function Sidebar(props) {
   return (
     <div className="sidebar">
-      <Teams firebaseDB={props.firebaseDB} />
+      <TeamsList firebaseDB={props.firebaseDB} />
     </div>
   );
 }
