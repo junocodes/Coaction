@@ -1,6 +1,6 @@
 ul.teams {
   list-style: none;
-  margin: 0;
+  margin: 0 0 30px;
   padding: 0;
   li {
     height: 60px;
@@ -19,5 +19,41 @@ ul.teams {
       background: $lime;
       color: $black;
     }
+  }
+}
+
+.create-team {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    margin: 0;
+  }
+  form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    input {
+      margin: 15px 0 30px;
+      text-align: center;
+      border: 5px solid $black;
+      border-radius: 5px;
+      height: 60px;
+      width: 300px;
+    }
+  }
+  button {
+    height: 45px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background: $lime;
+  }
+  small {
+    margin-top: 15px;
+    color: $mid;
+    cursor: pointer;
   }
 }
