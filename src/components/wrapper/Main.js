@@ -1,9 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function Main() {
-  return (
-    <div className="main">
-      <span>This is the main component.</span>
-    </div>
-  );
+export default class Main extends Component {
+  render() {
+    return (
+      <div className="main">
+        <header>
+          <span>
+            {this.props.activeTeam === null ? (
+              ""
+            ) : (
+              <h3>{this.props.activeTeam.name}</h3>
+            )}
+          </span>
+        </header>
+      </div>
+    );
+  }
 }

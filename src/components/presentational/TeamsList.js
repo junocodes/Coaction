@@ -59,7 +59,11 @@ export default class TeamsList extends Component {
       <>
         <ul className="teams">
           {teams.map(team => {
-            return <li key={team.key}>{team.name}</li>;
+            return (
+              <li key={team.key} onClick={() => this.props.setActiveTeam(team)}>
+                {team.name}
+              </li>
+            );
           })}
         </ul>
         <div className="create-team">

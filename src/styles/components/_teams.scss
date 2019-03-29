@@ -11,9 +11,12 @@ ul.teams {
     color: $white;
     margin-bottom: 15px;
     border-radius: 5px;
+    font-weight: bold;
     &:hover {
       background: $lime;
       color: $black;
+      border: 5px solid $black;
+      cursor: pointer;
     }
     &.active {
       background: $lime;
@@ -50,6 +53,10 @@ ul.teams {
     border: none;
     border-radius: 5px;
     background: $lime;
+    font-weight: bold;
+    &:hover {
+      border: 3px solid $black;
+    }
   }
   small {
     margin-top: 15px;
