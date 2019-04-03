@@ -1,19 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Main extends Component {
-  render() {
-    return (
-      <div className="main">
-        <header>
-          <span>
-            {this.props.activeTeam === null ? (
-              ""
-            ) : (
-              <h3>{this.props.activeTeam.name}</h3>
-            )}
-          </span>
-        </header>
-      </div>
-    );
-  }
+export default function Main(props) {
+  return (
+    <div className="main">
+      <header>
+        <span>
+          {props.activeTeam === null ? "" : <h3>{props.activeTeam.name}</h3>}
+        </span>
+      </header>
+      <main class="messages">{props.children}</main>
+    </div>
+  );
 }

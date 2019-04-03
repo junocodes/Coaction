@@ -1,0 +1,38 @@
+.messages {
+  h4 {
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 15px;
+      border-bottom: 1px solid $light;
+      div {
+        display: grid;
+        grid-template-columns: 1fr 90px;
+        grid-gap: 30px;
+        .message {
+          strong {
+            display: block;
+            margin-bottom: 5px;
+            font-style: normal;
+            &::after {
+              content: ":";
+            }
+          }
+          font-style: italic;
+        }
+        .time {
+          font-size: 0.9em;
+          background: $lime;
+          text-align: center;
+          padding: 5px;
+          border-radius: 5px;
+          align-self: center;
+        }
+      }
+    }
+  }
+}

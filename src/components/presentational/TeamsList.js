@@ -56,8 +56,9 @@ export default class TeamsList extends Component {
   render() {
     const { teams, isCreatingTeam } = this.state;
     return (
-      <>
-        <ul className="teams">
+      <div className="teams">
+        <h2>Team Channels</h2>
+        <ul>
           {teams.map(team => {
             return (
               <li key={team.key} onClick={() => this.props.setActiveTeam(team)}>
@@ -88,7 +89,7 @@ export default class TeamsList extends Component {
             </button>
           )}
         </div>
-      </>
+      </div>
     );
   }
 }

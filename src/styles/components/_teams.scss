@@ -1,26 +1,31 @@
-ul.teams {
-  list-style: none;
-  margin: 0 0 30px;
-  padding: 0;
-  li {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $black;
-    color: $white;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    &:hover {
-      background: $lime;
-      color: $black;
-      border: 5px solid $black;
-      cursor: pointer;
-    }
-    &.active {
-      background: $lime;
-      color: $black;
+.teams {
+  h2 {
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+    li {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $black;
+      color: $white;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      &:hover {
+        background: $lime;
+        color: $black;
+        border: 5px solid $black;
+        cursor: pointer;
+      }
+      &.active {
+        background: $lime;
+        color: $black;
+      }
     }
   }
 }
