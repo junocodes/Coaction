@@ -5,8 +5,8 @@ export default class TeamsList extends Component {
     super(props);
     this.state = { teams: [], isCreatingTeam: false, value: "" };
 
-    // Creating reference for FirebaseDB data.
-    this.teamsRef = this.props.firebaseDB.database().ref("teams");
+    // Creating reference for Firebase data.
+    this.teamsRef = this.props.firebase.database().ref("teams");
 
     // Binding form values for team creation.
     this.handleChange = this.handleChange.bind(this);
@@ -27,7 +27,7 @@ export default class TeamsList extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // Define and push new team to FirebaseDB.
+    // Define and push new team to firebase.
     let newTeam = this.state.value;
     this.teamsRef.push({
       name: newTeam
@@ -43,12 +43,12 @@ export default class TeamsList extends Component {
       // Destructuring for readibility.
       const { teams } = this.state;
 
-      // Sync FirebaseDB data to state.
+      // Sync Firebase data to state.
       const team = snapshot.val();
       team.key = snapshot.key;
       this.setState({ teams: teams.concat(team) });
 
-      // Reference returned FirebaseDB teams as table.
+      // Reference returned Firebase teams as table.
       console.table(teams);
     });
   }
@@ -57,7 +57,7 @@ export default class TeamsList extends Component {
     const { teams, isCreatingTeam } = this.state;
     return (
       <div className="teams">
-        <h2>Team Channels</h2>
+        <h2>Team Channels:</h2>
         <ul>
           {teams.map(team => {
             return (

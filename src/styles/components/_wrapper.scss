@@ -37,6 +37,21 @@ body {
 
 .sidebar {
   position: fixed;
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   width: 300px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    height: 45px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background: $lime;
+    font-weight: bold;
+    &:hover {
+      border: 3px solid $black;
+    }
+  }
 }

@@ -6,8 +6,8 @@ export default class MessagesList extends Component {
     super(props);
     this.state = { messages: [] };
 
-    // Creating reference for FirebaseDB data.
-    this.messagesRef = this.props.firebaseDB.database().ref("messages");
+    // Creating reference for Firebase data.
+    this.messagesRef = this.props.firebase.database().ref("messages");
   }
 
   componentDidMount() {
@@ -15,12 +15,12 @@ export default class MessagesList extends Component {
       // Destructuring for readibility.
       const { messages } = this.state;
 
-      // Sync FirebaseDB data to state.
+      // Sync Firebase data to state.
       const message = snapshot.val();
       message.key = snapshot.key;
       this.setState({ messages: messages.concat(message) });
 
-      // Reference returned FirebaseDB teams as table.
+      // Reference returned Firebase teams as table.
       console.table(messages);
     });
   }
@@ -31,7 +31,7 @@ export default class MessagesList extends Component {
     return (
       <>
         {activeTeam === null ? (
-          <h4>Please select a team to start chatting.</h4>
+          ""
         ) : (
           <ul>
             {messages
