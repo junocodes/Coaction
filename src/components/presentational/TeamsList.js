@@ -55,6 +55,7 @@ export default class TeamsList extends Component {
 
   render() {
     const { teams, isCreatingTeam } = this.state;
+    const { user } = this.props;
     return (
       <div className="teams">
         <h2>Team Channels:</h2>
@@ -84,9 +85,13 @@ export default class TeamsList extends Component {
               </small>
             </>
           ) : (
-            <button onClick={() => this.handleCreatingTeamToggle()}>
-              Create Team
-            </button>
+            <>
+              {user !== null && (
+                <button onClick={() => this.handleCreatingTeamToggle()}>
+                  Create Team
+                </button>
+              )}
+            </>
           )}
         </div>
       </div>

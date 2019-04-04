@@ -36,13 +36,18 @@ export default class App extends Component {
     return (
       <div className="layout">
         <Main activeTeam={activeTeam} user={user}>
-          <MessagesList activeTeam={activeTeam} firebase={firebase} />
+          <MessagesList
+            activeTeam={activeTeam}
+            firebase={firebase}
+            user={user}
+          />
         </Main>
         <Sidebar>
           <TeamsList
             firebase={firebase}
             activeTeam={activeTeam}
             setActiveTeam={this.setActiveTeam.bind(this)}
+            user={user}
           />
           <User
             firebase={firebase}
